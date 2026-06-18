@@ -1,0 +1,2028 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King City - Discover Anuradhapura, Sri Lanka</title>
+    <meta name="description" content="Explore the ancient city of Anuradhapura with King City. Discover Sri Maha Bodhi, Ruwanwelisaya, Jetavanaramaya, Mihintale, culture, history, hotels, and more.">
+    <meta name="keywords" content="King City, Anuradhapura, Sri Lanka Tourism, Sri Maha Bodhi, Ruwanwelisaya, Jetavanaramaya, Mihintale, Ancient Kingdom">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Sinhala:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <style>
+        :root {
+            --gold: #C9A961;
+            --gold-light: #E8D5A3;
+            --green: #2D5A3D;
+            --green-light: #4A7C59;
+            --green-dark: #1A3D26;
+            --brown: #3D2817;
+            --brown-light: #6B4423;
+            --cream: #FAF6F0;
+            --white: #FFFFFF;
+            --dark: #1A1A1A;
+            --gray: #6B7280;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        [data-theme="dark"] {
+            --cream: #0F0F0F;
+            --white: #1A1A1A;
+            --dark: #FAF6F0;
+            --gray: #9CA3AF;
+            --glass-bg: rgba(0, 0, 0, 0.3);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans Sinhala', sans-serif;
+            background-color: var(--cream);
+            color: var(--dark);
+            transition: background-color 0.5s ease, color 0.5s ease;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .logo-text {
+            font-family: 'Cinzel', 'Noto Sans Sinhala', serif;
+        }
+
+        .subtitle-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--brown);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: rgba(250, 246, 240, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+            padding: 0.5rem 0;
+        }
+
+        [data-theme="dark"] .navbar.scrolled {
+            background: rgba(15, 15, 15, 0.95);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(201, 169, 97, 0.4);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 2px;
+            transition: color 0.3s;
+        }
+
+        .navbar.scrolled .logo-text {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+        }
+
+        .navbar.scrolled .nav-links a {
+            color: var(--dark);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .icon-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--glass-border);
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            color: var(--white);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .navbar.scrolled .icon-btn {
+            color: var(--dark);
+            border-color: rgba(0,0,0,0.1);
+        }
+
+        .icon-btn:hover {
+            background: var(--gold);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(201, 169, 97, 0.4);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s;
+        }
+
+        .navbar.scrolled .mobile-menu-btn span {
+            background: var(--dark);
+        }
+
+        /* Search Overlay */
+        .search-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .search-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .search-box {
+            width: 90%;
+            max-width: 700px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 1.5rem 2rem;
+            font-size: 1.5rem;
+            border: 2px solid var(--gold);
+            border-radius: 50px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            outline: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .search-box input::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .search-close {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .search-results {
+            margin-top: 2rem;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .search-result-item {
+            padding: 1rem;
+            color: white;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .search-result-item:hover {
+            background: rgba(201, 169, 97, 0.2);
+            padding-left: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://kimi-web-img.moonshot.cn/img/besttimetovisitsrilanka.com/729852ed5ddde0729ff3fd0c97c5c376c957b398.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(26,26,26,0.4) 0%, rgba(26,26,26,0.7) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 0 2rem;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(201, 169, 97, 0.2);
+            border: 1px solid var(--gold);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            letter-spacing: 5px;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 3rem;
+            letter-spacing: 2px;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: white;
+            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(201, 169, 97, 0.6);
+            background: #B8984F;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--brown);
+            transform: translateY(-3px);
+            border-color: white;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--dark);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+        }
+
+        .section-desc {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 1.5rem auto 0;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--cream);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--gold);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .about-content h3 {
+            font-size: 2rem;
+            color: var(--brown);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            color: var(--gray);
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .sinhala-text {
+            font-family: 'Noto Sans Sinhala', sans-serif;
+            font-size: 1.1rem;
+            color: var(--green);
+            font-weight: 500;
+            line-height: 2;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(201, 169, 97, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(201, 169, 97, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            font-family: 'Cinzel', serif;
+        }
+
+        .stat-label {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Popular Places */
+        .places {
+            background: linear-gradient(135deg, var(--cream) 0%, rgba(201,169,97,0.05) 100%);
+        }
+
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .place-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        [data-theme="dark"] .place-card {
+            background: #1A1A1A;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .place-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .place-image {
+            position: relative;
+            height: 260px;
+            overflow: hidden;
+        }
+
+        .place-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .place-card:hover .place-image img {
+            transform: scale(1.1);
+        }
+
+        .place-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--gold);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .place-content {
+            padding: 2rem;
+        }
+
+        .place-content h3 {
+            font-size: 1.4rem;
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .place-content p {
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .btn-small {
+            padding: 0.6rem 1.5rem;
+            font-size: 0.85rem;
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-small:hover {
+            background: var(--gold);
+            color: white;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: var(--cream);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            grid-auto-rows: 300px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            grid-row: span 1;
+        }
+
+        .gallery-item:nth-child(3n+1) {
+            grid-row: span 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-title {
+            color: white;
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-nav:hover {
+            background: var(--gold);
+        }
+
+        .lightbox-prev { left: 2rem; }
+        .lightbox-next { right: 2rem; }
+
+        /* Culture & Food */
+        .culture {
+            background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .culture::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: rgba(201, 169, 97, 0.1);
+            border-radius: 50%;
+        }
+
+        .culture .section-title,
+        .culture .section-label {
+            color: white;
+        }
+
+        .culture .section-desc {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .culture-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.4s;
+        }
+
+        .culture-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .culture-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gold);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .culture-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--gold-light);
+        }
+
+        .culture-card p {
+            color: rgba(255,255,255,0.85);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .food-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .food-item {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            height: 250px;
+        }
+
+        .food-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .food-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .food-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Hotels Section */
+        .hotels {
+            background: var(--cream);
+        }
+
+        .hotels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .hotel-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s;
+        }
+
+        [data-theme="dark"] .hotel-card {
+            background: #1A1A1A;
+        }
+
+        .hotel-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .hotel-image {
+            height: 220px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hotel-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .hotel-card:hover .hotel-image img {
+            transform: scale(1.1);
+        }
+
+        .hotel-price {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--gold);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .hotel-content {
+            padding: 1.5rem 2rem 2rem;
+        }
+
+        .hotel-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .stars {
+            color: var(--gold);
+        }
+
+        .hotel-content h3 {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .hotel-location {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hotel-features {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hotel-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 0;
+            height: 500px;
+            position: relative;
+        }
+
+        .map-section iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(20%);
+        }
+
+        .map-overlay {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 600;
+            color: var(--brown);
+        }
+
+        [data-theme="dark"] .map-overlay {
+            background: #1A1A1A;
+            color: var(--cream);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(135deg, var(--brown) 0%, var(--brown-light) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials::before {
+            content: '"';
+            position: absolute;
+            top: -50px;
+            left: 5%;
+            font-size: 400px;
+            opacity: 0.05;
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+
+        .testimonials-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-slide {
+            text-align: center;
+            padding: 2rem;
+            display: none;
+        }
+
+        .testimonial-slide.active {
+            display: block;
+            animation: fadeIn 0.6s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .testimonial-text {
+            font-size: 1.3rem;
+            line-height: 1.9;
+            font-style: italic;
+            margin-bottom: 2rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid var(--gold);
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info span {
+            color: var(--gold-light);
+            font-size: 0.9rem;
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 3rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .dot.active {
+            background: var(--gold);
+            transform: scale(1.2);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--cream);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--brown);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(201, 169, 97, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item div h4 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+            color: var(--dark);
+        }
+
+        .contact-item div p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            font-size: 1.1rem;
+        }
+
+        [data-theme="dark"] .social-link {
+            background: #2A2A2A;
+        }
+
+        .social-link:hover {
+            background: var(--gold);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        [data-theme="dark"] .contact-form {
+            background: #1A1A1A;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark);
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(0,0,0,0.08);
+            border-radius: 12px;
+            background: transparent;
+            color: var(--dark);
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 4px rgba(201, 169, 97, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--brown);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand .logo-text {
+            color: var(--gold);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links h4 {
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--gold);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s;
+            z-index: 999;
+            border: none;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 20px rgba(201, 169, 97, 0.4);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            background: var(--brown);
+        }
+
+        /* Parallax Section Divider */
+        .parallax-divider {
+            height: 400px;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .parallax-divider::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+
+        .parallax-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 0 2rem;
+        }
+
+        .parallax-content h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .parallax-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 400px;
+            height: 100%;
+            background: var(--cream);
+            z-index: 1500;
+            padding: 6rem 2rem 2rem;
+            transition: right 0.4s ease;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        [data-theme="dark"] .mobile-menu {
+            background: #0F0F0F;
+        }
+
+        .mobile-menu-links {
+            list-style: none;
+        }
+
+        .mobile-menu-links li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-menu-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: block;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1400;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s;
+        }
+
+        .mobile-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            section {
+                padding: 4rem 1.5rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-item:nth-child(3n+1) {
+                grid-row: span 1;
+            }
+        }
+
+        /* Animations */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+        }
+
+        /* Loading Animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--cream);
+            z-index: 5000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-circle {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(201, 169, 97, 0.2);
+            border-top-color: var(--gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Dark mode specific overrides */
+        [data-theme="dark"] .section-title {
+            color: var(--cream);
+        }
+        
+        [data-theme="dark"] .place-content h3,
+        [data-theme="dark"] .hotel-content h3,
+        [data-theme="dark"] .contact-item div h4,
+        [data-theme="dark"] .form-group label {
+            color: var(--cream);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-circle"></div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search places, hotels, culture..." autocomplete="off">
+            <button class="search-close" onclick="closeSearch()"><i class="fas fa-times"></i></button>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
+        <button class="lightbox-nav lightbox-prev" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></button>
+        <img src="" alt="Gallery Image" id="lightboxImg">
+        <button class="lightbox-nav lightbox-next" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-menu-links">
+            <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
+            <li><a href="#places" onclick="closeMobileMenu()">Places</a></li>
+            <li><a href="#gallery" onclick="closeMobileMenu()">Gallery</a></li>
+            <li><a href="#culture" onclick="closeMobileMenu()">Culture</a></li>
+            <li><a href="#hotels" onclick="closeMobileMenu()">Hotels</a></li>
+            <li><a href="#testimonials" onclick="closeMobileMenu()">Reviews</a></li>
+            <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <div class="logo-icon"><i class="fas fa-crown"></i></div>
+                <span class="logo-text">King City</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#places">Places</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#culture">Culture</a></li>
+                <li><a href="#hotels">Hotels</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="icon-btn" onclick="openSearch()" title="Search"><i class="fas fa-search"></i></button>
+                <button class="icon-btn" onclick="toggleTheme()" title="Toggle Dark Mode"><i class="fas fa-moon" id="themeIcon"></i></button>
+                <button class="mobile-menu-btn" onclick="openMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">UNESCO World Heritage Site</div>
+            <h1 class="hero-title">King City</h1>
+            <p class="hero-subtitle subtitle-font">Discover Anuradhapura, Sri Lanka</p>
+            <div class="hero-buttons">
+                <a href="#places" class="btn btn-primary"><i class="fas fa-map-marker-alt"></i> Explore Places</a>
+                <a href="#gallery" class="btn btn-outline"><i class="fas fa-images"></i> View Gallery</a>
+            </div>
+        </div>
+        <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+            <i class="fas fa-chevron-down fa-2x"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Our Heritage</span>
+                <h2 class="section-title">About Anuradhapura</h2>
+                <p class="section-desc">The sacred ancient capital that shaped the soul of Sri Lanka for over 1,300 years.</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-image" data-aos="fade-right">
+                    <img src="https://kimi-web-img.moonshot.cn/img/dynamic-media-cdn.tripadvisor.com/3364f9cf9bbe0c236ed088b98aaf8229f0d2784e.jpg" alt="Anuradhapura Ancient City">
+                </div>
+                <div class="about-content" data-aos="fade-left">
+                    <h3>Ancient Kingdom of Glory</h3>
+                    <p>Founded in the 4th century BCE by King Pandukabhaya, Anuradhapura was the center of Sinhalese Buddhist civilization for over 1,300 years. It was the island's first true capital, a city made of grand palaces, monasteries, bathing pools, and magnificent stupas that rivaled the ancient capitals of India and Rome.</p>
+                    
+                    <p class="sinhala-text">අනුරාධපුරය ශ්‍රී ලංකාවේ පළමු රාජධානිය වූ අතර, බෞද්ධ ශිෂ්ටාචාරයේ මධ්‍යස්ථානය විය. මෙහි ශ්‍රී මහා බෝධිය, රුවන්වැලිසෑය, ජේතවනාරාමය සහ අනෙකුත් පුදබිම් බෞද්ධ ලෝකයේ පිළිගත් පුණ්‍ය භූමි වේ.</p>
+                    
+                    <p>When a sapling from the Bodhi Tree in Bodh Gaya was brought to Sri Lanka in the 3rd century BCE, Anuradhapura became the spiritual center of the island. The Jaya Sri Maha Bodhi, planted by Princess Sangamitta, still grows here today — the oldest recorded tree planted by human hands.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="stat-number">1300+</div>
+                            <div class="stat-label">Years of Glory</div>
+                        </div>
+                        <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="stat-number">112</div>
+                            <div class="stat-label">Kings Ruled</div>
+                        </div>
+                        <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="stat-number">1982</div>
+                            <div class="stat-label">UNESCO Listed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Divider -->
+    <div class="parallax-divider" style="background-image: url('https://kimi-web-img.moonshot.cn/img/c8.alamy.com/89102a874141b99f93c4f1173f4b791326c2abef.jpg');">
+        <div class="parallax-content">
+            <h2>Sacred City of Anuradhapura</h2>
+            <p>Walk through 2,300 years of history, spirituality, and architectural marvel</p>
+        </div>
+    </div>
+
+    <!-- Popular Places -->
+    <section class="places" id="places">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Must Visit</span>
+                <h2 class="section-title">Popular Places</h2>
+                <p class="section-desc">Explore the most sacred and magnificent sites of the ancient kingdom.</p>
+            </div>
+            
+            <div class="places-grid">
+                <!-- Sri Maha Bodhi -->
+                <div class="place-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="place-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.andbeyond.com/e2831405657a3c52a895fb712225947c06cfade9.jpg" alt="Sri Maha Bodhi">
+                        <span class="place-badge">Sacred</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Sri Maha Bodhi</h3>
+                        <p>The oldest documented tree on earth, a direct descendant of the tree under which Buddha attained enlightenment. Planted over 2,300 years ago by Princess Sangamitta.</p>
+                        <a href="#" class="btn-small">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Ruwanwelisaya -->
+                <div class="place-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="place-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.trawell.in/aa9a9a984a7c19e0112b9790ce86a7e018298923.jpg" alt="Ruwanwelisaya">
+                        <span class="place-badge">Iconic</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Ruwanwelisaya</h3>
+                        <p>Built by King Dutugemunu in 140 BC, this magnificent white stupa rises 103 meters high. Guarded by 344 elephant statues, it enshrines the most Buddha relics in the world.</p>
+                        <a href="#" class="btn-small">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Jetavanaramaya -->
+                <div class="place-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="place-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/tropicallifedambulla.com/4d14994eb7e178d543578f813818ea19906c3cab.jpg" alt="Jetavanaramaya">
+                        <span class="place-badge">Historic</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Jetavanaramaya</h3>
+                        <p>Once the tallest brick structure in the ancient world at 122 meters. Built in the 3rd century CE by King Mahasena, this ochre-hued stupa dominated the skyline for centuries.</p>
+                        <a href="#" class="btn-small">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Isurumuniya Temple -->
+                <div class="place-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="place-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/dynamic-media-cdn.tripadvisor.com/da00121dcb4d2c9ec27a414409c65a4854468082.jpg" alt="Isurumuniya Temple">
+                        <span class="place-badge">Ancient</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Isurumuniya Temple</h3>
+                        <p>Built into rock in the 3rd century BC, this temple features the famous Isurumuniya Lovers carving and the oldest visible pagoda in the world. A masterpiece of rock architecture.</p>
+                        <a href="#" class="btn-small">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Abhayagiri Stupa -->
+                <div class="place-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="place-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/dynamic-media-cdn.tripadvisor.com/7a99d03f732d58ea42300252c488c8ae6c72de12.jpg" alt="Abhayagiri Stupa">
+                        <span class="place-badge">Monastic</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Abhayagiri Stupa</h3>
+                        <p>The centerpiece of a 5,000-monk monastery, this dagoba originally stood 100 meters high. A major center of Buddhist learning that attracted scholars from across Asia.</p>
+                        <a href="#" class="btn-small">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Mihintale -->
+                <div class="place-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="place-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/d1bv4heaa2n05k.cloudfront.net/cc68f895e37839c6d7c6a93a0ed4484b360f2f36.jpeg" alt="Mihintale">
+                        <span class="place-badge">Pilgrimage</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Mihintale</h3>
+                        <p>The cradle of Buddhism in Sri Lanka. Where Arahath Mahinda Thero preached Buddhism to King Devanampiyatissa in 236 BC. Climb 1,840 steps for panoramic views.</p>
+                        <a href="#" class="btn-small">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Visual Journey</span>
+                <h2 class="section-title">Gallery</h2>
+                <p class="section-desc">Capturing the timeless beauty of Anuradhapura through the lens.</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)" data-aos="fade-up">
+                    <img src="https://kimi-web-img.moonshot.cn/img/besttimetovisitsrilanka.com/729852ed5ddde0729ff3fd0c97c5c376c957b398.jpg" alt="Anuradhapura Sunset">
+                    <div class="gallery-overlay">
+                        <span class="gallery-title">Sunset over Sacred City</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.historyhit.com/73f7e137edac0157995167aa9c62f5a470239355.jpg" alt="Sri Maha Bodhi Tree">
+                    <div class="gallery-overlay">
+                        <span class="gallery-title">Jaya Sri Maha Bodhi</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.trawell.in/aa9a9a984a7c19e0112b9790ce86a7e018298923.jpg" alt="Ruwanwelisaya Stupa">
+                    <div class="gallery-overlay">
+                        <span class="gallery-title">Ruwanwelisaya Glory</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)" data-aos="fade-up">
+                    <img src="https://kimi-web-img.moonshot.cn/img/tropicallifedambulla.com/4d14994eb7e178d543578f813818ea19906c3cab.jpg" alt="Jetavanaramaya">
+                    <div class="gallery-overlay">
+                        <span class="gallery-title">Jetavanaramaya Stupa</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://kimi-web-img.moonshot.cn/img/dynamic-media-cdn.tripadvisor.com/7a99d03f732d58ea42300252c488c8ae6c72de12.jpg" alt="Abhayagiri">
+                    <div class="gallery-overlay">
+                        <span class="gallery-title">Abhayagiri Monastery</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://kimi-web-img.moonshot.cn/img/dynamic-media-cdn.tripadvisor.com/da00121dcb4d2c9ec27a414409c65a4854468082.jpg" alt="Isurumuniya">
+                    <div class="gallery-overlay">
+                        <span class="gallery-title">Isurumuniya Temple</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(6)" data-aos="fade-up">
+                    <img src="https://kimi-web-img.moonshot.cn/img/d1bv4heaa2n05k.cloudfront.net/cc68f895e37839c6d7c6a93a0ed4484b360f2f36.jpeg" alt="Mihintale Buddha">
+                    <div class="gallery-overlay">
+                        <span class="gallery-title">Mihintale Panorama</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(7)" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://kimi-web-img.moonshot.cn/img/res.cloudinary.com/a38380fdc9897ec1e45cf9b50cd3c31a229df944.webp" alt="Mihintale Sunset">
+                    <div class="gallery-overlay">
+                        <span class="gallery-title">Mihintale at Dusk</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture & Food Section -->
+    <section class="culture" id="culture">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Heritage & Flavors</span>
+                <h2 class="section-title">Culture & Food</h2>
+                <p class="section-desc">Experience the vibrant traditions, festivals, and culinary delights of Sri Lanka.</p>
+            </div>
+            
+            <div class="culture-grid">
+                <div class="culture-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="culture-icon"><i class="fas fa-om"></i></div>
+                    <h3>Sri Lankan Traditions</h3>
+                    <p>Ayurveda, meditation, and the timeless practice of Buddhism shape daily life. Experience the warm hospitality, traditional dance forms like Kandyan and Sabaragamuwa, and the reverence for elders that defines our culture.</p>
+                </div>
+                
+                <div class="culture-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="culture-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Vesak Festival</h3>
+                    <p>The Festival of Lights celebrates Buddha's birth, enlightenment, and passing. Streets glow with lanterns, pandals display Jataka tales, and dansalas offer free food to all. The entire island becomes a sparkling wonderland.</p>
+                </div>
+                
+                <div class="culture-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="culture-icon"><i class="fas fa-mountain"></i></div>
+                    <h3>Poson Festival</h3>
+                    <p>Commemorating the arrival of Buddhism in 236 BC. Pilgrims climb Mihintale in white, carrying lanterns and offerings. The mountain comes alive with devotional songs, sermons, and the spirit of faith.</p>
+                </div>
+            </div>
+            
+            <div class="food-showcase">
+                <div class="food-item" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.tasteatlas.com/1aa3ac40eec2fd010c1847d3ae70b7e86b489223.jpg" alt="Rice and Curry">
+                    <div class="food-label">Rice & Curry</div>
+                </div>
+                <div class="food-item" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://kimi-web-img.moonshot.cn/img/avgtravels.com/969e05ac663e6cb454ec42f1590de08e0e076751.jpg" alt="Traditional Sri Lankan Food">
+                    <div class="food-label">Traditional Feast</div>
+                </div>
+                <div class="food-item" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="https://kimi-web-img.moonshot.cn/img/nexttravelsrilanka.com/0f7eafce9a08211ad872b01f9bb1a0b123637715.jpg" alt="Vesak Lanterns">
+                    <div class="food-label">Vesak Celebrations</div>
+                </div>
+                <div class="food-item" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="https://kimi-web-img.moonshot.cn/img/5f152dd37e.clvaw-cdnwnd.com/7a1ccf22629700d4e3268fecbea98310e5d37288.jpeg" alt="Vesak Lantern">
+                    <div class="food-label">Festival of Lights</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hotels Section -->
+    <section class="hotels" id="hotels">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Stay in Comfort</span>
+                <h2 class="section-title">Hotels & Resorts</h2>
+                <p class="section-desc">Find the perfect accommodation for your spiritual and cultural journey.</p>
+            </div>
+            
+            <div class="hotels-grid">
+                <div class="hotel-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="hotel-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/images.mrandmrssmith.com/16453103b59bc41d6e9689ffaacd4d66aa333578.jpg" alt="Ulagalla Resort">
+                        <span class="hotel-price">$350/night</span>
+                    </div>
+                    <div class="hotel-content">
+                        <div class="hotel-rating">
+                            <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                            <span>5.0</span>
+                        </div>
+                        <h3>Uga Ulagalla</h3>
+                        <div class="hotel-location"><i class="fas fa-map-marker-alt"></i> Thirappane, Anuradhapura</div>
+                        <div class="hotel-features">
+                            <span class="hotel-feature"><i class="fas fa-swimming-pool"></i> Pool</span>
+                            <span class="hotel-feature"><i class="fas fa-spa"></i> Spa</span>
+                            <span class="hotel-feature"><i class="fas fa-wifi"></i> WiFi</span>
+                        </div>
+                        <a href="#" class="btn btn-primary" style="width: 100%; justify-content: center;">Book Now</a>
+                    </div>
+                </div>
+
+                <div class="hotel-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="hotel-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/dynamic-media-cdn.tripadvisor.com/0293ee9c47f39e78953a82ecd5023ef6f5cf77ed.jpg" alt="Luxury Hotel">
+                        <span class="hotel-price">$180/night</span>
+                    </div>
+                    <div class="hotel-content">
+                        <div class="hotel-rating">
+                            <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span>
+                            <span>4.5</span>
+                        </div>
+                        <h3>Heritage Hotel</h3>
+                        <div class="hotel-location"><i class="fas fa-map-marker-alt"></i> Sacred City, Anuradhapura</div>
+                        <div class="hotel-features">
+                            <span class="hotel-feature"><i class="fas fa-swimming-pool"></i> Pool</span>
+                            <span class="hotel-feature"><i class="fas fa-utensils"></i> Restaurant</span>
+                            <span class="hotel-feature"><i class="fas fa-car"></i> Parking</span>
+                        </div>
+                        <a href="#" class="btn btn-primary" style="width: 100%; justify-content: center;">Book Now</a>
+                    </div>
+                </div>
+
+                <div class="hotel-card" data-aos="
